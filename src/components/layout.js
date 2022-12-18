@@ -1,7 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-export const Layout = ({ children, navData }) => {
+const navData = [
+  {
+    title: 'Students',
+    slug: '/students'
+  },
+  {
+    title: 'Campuses',
+    slug: '/campuses'
+  }
+];
+
+export const Layout = ({ children }) => {
   const navItems = React.useMemo(
     () =>
       navData.map((item) => (
@@ -11,20 +22,6 @@ export const Layout = ({ children, navData }) => {
       )),
     [navData]
   );
-
-  // const contentItems = React.useMemo(
-  //   () =>
-  //     children.map((item) => (
-  //       <Link key={item.id} className="contentItem" to={item.id}>
-  //         <img
-  //           src={student.imageUrl}
-  //           alt={`Class photo of ${student.firstName} ${student.lastName}`}
-  //         />
-  //         <span>{`${student.firstName} ${student.lastName}`}</span>
-  //       </Link>
-  //     )),
-  //   [children]
-  // );
 
   return (
     <div className="containerLayout">
