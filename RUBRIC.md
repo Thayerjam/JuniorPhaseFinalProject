@@ -23,13 +23,14 @@
 
 ### Code Cleanliness/Maintainability (8/24)
 
-| Criteria                                                                 | Score | Comments |
-| ------------------------------------------------------------------------ | ----- | -------- |
-| Formatting (indentation, whitespace, etc) is consistent                  | -/2   |          |
-| No unused/unnecessary code                                               | -/2   |          |
-| Uses meaningful/self-documenting variable/function names                 | -/2   |          |
-| Does not contain blocks of commented code, console.logs or node_modules  | -/2   |          |
-|   along with transpiled files
+| Criteria                                                                | Score | Comments |
+| ----------------------------------------------------------------------- | ----- | -------- |
+| Formatting (indentation, whitespace, etc) is consistent                 | -/2   |          |
+| No unused/unnecessary code                                              | -/2   |          |
+| Uses meaningful/self-documenting variable/function names                | -/2   |          |
+| Does not contain blocks of commented code, console.logs or node_modules | -/2   |          |
+
+| along with transpiled files
 
 ### Git (4/24)
 
@@ -54,20 +55,20 @@ _Comments from your instructor or fellow will go here_
 - Rubric score (24 points total, weighted at 30% of total grade)
 - Extra credit (15 points total, for an additional 15% max)
 
-- RAW REQUIREMENT SCORE: __
-- RAW RUBRIC SCORE: __
-- RAW EC SCORE: __
-- DEDUCTIONS: __
+- RAW REQUIREMENT SCORE: \_\_
+- RAW RUBRIC SCORE: \_\_
+- RAW EC SCORE: \_\_
+- DEDUCTIONS: \_\_
 
-- TOTAL: __
+- TOTAL: \_\_
 
 ```javascript
 const getTotal = (rawRequirementScore, rawRubricScore, rawExtraCredit, deductions) => {
-  const totalRequirementScore = ((rawRequirementScore/59) * 100) * 0.7
-  const totalRubricScore = ((rawRubricScore/24) * 100) * 0.3
-  const totalExtraCredit = ((rawExtraCredit/15) * 100) * 0.15
+  const totalRequirementScore = (rawRequirementScore / 59) * 100 * 0.7;
+  const totalRubricScore = (rawRubricScore / 24) * 100 * 0.3;
+  const totalExtraCredit = (rawExtraCredit / 15) * 100 * 0.15;
 
-  const total = totalRequirementScore + totalRubricScore + totalExtraCredit - deductions
-  return total
-}
+  const total = totalRequirementScore + totalRubricScore + totalExtraCredit - deductions;
+  return total;
+};
 ```

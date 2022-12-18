@@ -4,35 +4,35 @@
 
 ### Frontend
 
-#### Campus
+#### Campus       MEDIUM/HARD
 
   <details>
 
-- [ ] Write a component to display a list of all campuses (at least their names and images)
+- [X] Write a component to display a list of all campuses (at least their names and images)
 - [ ] Write a campuses sub-reducer to manage campuses in your Redux store
-- [ ] Display the all-campuses component when the url matches `/campuses`
+- [X] Display the all-campuses component when the url matches `/campuses`
 
   </details>
 
-#### Students
+#### Students      MEDIUM/HARD
 
   <details>
 
-- [ ] Write a component to display a list of all students (at least their names)
+- [X] Write a component to display a list of all students (at least their names)
 - [ ] Write a students sub-reducer to manage students in your Redux store
-- [ ] Display the all-students component when the url matches `/students`
+- [X] Display the all-students component when the url matches `/students`
 
   </details>
 
-#### Navbar
+#### Navbar      EASY/MEDIUM - I KNOW THIS
 
   <details>
 
-- [ ] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
+- [X] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
 
   </details>
 
-### Backend
+### Backend       HARD - DON'T KNOW THIS
 
 #### Seed
 
