@@ -5773,7 +5773,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({
-  reducer: {
+  reducers: {
     data: _stateSlice__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
@@ -5790,27 +5790,27 @@ var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "setCampusData": () => (/* binding */ setCampusData),
+/* harmony export */   "setCampusAsync": () => (/* binding */ setCampusAsync),
 /* harmony export */   "setCampuses": () => (/* binding */ setCampuses),
-/* harmony export */   "setStudentData": () => (/* binding */ setStudentData),
 /* harmony export */   "setStudents": () => (/* binding */ setStudents),
+/* harmony export */   "setStudentsAsync": () => (/* binding */ setStudentsAsync),
 /* harmony export */   "stateSlice": () => (/* binding */ stateSlice)
 /* harmony export */ });
 /* harmony import */ var _reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @reduxjs/toolkit */ "./node_modules/@reduxjs/toolkit/dist/redux-toolkit.esm.js");
 
 var stateSlice = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createSlice)({
-  name: 'data',
+  name: "data",
   initialState: {
     students: [],
     campuses: []
   },
-  reducer: {
+  reducers: {
     setStudents: function setStudents(state, action) {
-      console.log('setStudents', state, action);
+      console.log("setStudents", state, action);
       state.students = action.payload;
     },
     setCampuses: function setCampuses(state, action) {
-      console.log('setCampuses', state, action);
+      console.log("setCampuses", state, action);
       state.campuses = action.payload;
     }
   }
@@ -5819,19 +5819,19 @@ var _stateSlice$actions = stateSlice.actions,
   setStudents = _stateSlice$actions.setStudents,
   setCampuses = _stateSlice$actions.setCampuses;
 
-var setStudentData = function setStudentData(data) {
+var setStudentsAsync = function setStudentsAsync(data) {
   return function (dispatch) {
-    console.log('setStudentData', data);
+    console.log("setStudentData", data);
     setTimeout(function () {
-      dispatch(stateSlice.actions.setStudents(data));
+      dispatch(setStudents(data));
     }, 1000);
   };
 };
-var setCampusData = function setCampusData(data) {
+var setCampusAsync = function setCampusAsync(data) {
   return function (dispatch) {
-    console.log('setCampusData', data);
+    console.log("setCampusData", data);
     setTimeout(function () {
-      dispatch(stateSlice.actions.setCampuses(data));
+      dispatch(setCampuses(data));
     }, 1000);
   };
 };
@@ -5867,47 +5867,10 @@ var CampusView = function CampusView() {
   var campuses = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLoaderData)();
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     console.log('CampusView useEffect', campuses);
-    dispatch((0,_store_stateSlice__WEBPACK_IMPORTED_MODULE_3__.setCampusData)(campuses));
+    dispatch((0,_store_stateSlice__WEBPACK_IMPORTED_MODULE_3__.setCampusAsync)(campuses));
   }, [campuses]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_4__.Layout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Campuses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_list__WEBPACK_IMPORTED_MODULE_1__.ListView, {
     type: "campuses"
-  }));
-};
-
-/***/ }),
-
-/***/ "./src/views/studentView.js":
-/*!**********************************!*\
-  !*** ./src/views/studentView.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "StudentView": () => (/* binding */ StudentView)
-/* harmony export */ });
-/* harmony import */ var _components_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/list */ "./src/components/list.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _store_stateSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/stateSlice */ "./src/store/stateSlice.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.js");
-
-
-
-
-
-
-var StudentView = function StudentView() {
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
-  var students = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLoaderData)();
-  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
-    console.log('StudentView useEffect', students);
-    dispatch((0,_store_stateSlice__WEBPACK_IMPORTED_MODULE_3__.setStudentData)(students));
-  }, [students]);
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_4__.Layout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "Students"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_list__WEBPACK_IMPORTED_MODULE_0__.ListView, {
-    type: "students"
   }));
 };
 
@@ -45755,14 +45718,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components */ "./src/components/index.js");
 /* harmony import */ var _store_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./store/index */ "./src/store/index.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _views_studentView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/studentView */ "./src/views/studentView.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module './views/studentView'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* harmony import */ var _views_CampusView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/CampusView */ "./src/views/CampusView.js");
 /* harmony import */ var _server_mocks_students_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../server/mocks/students.json */ "./server/mocks/students.json");
 /* harmony import */ var _server_mocks_campuses_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../server/mocks/campuses.json */ "./server/mocks/campuses.json");
 /* harmony import */ var _components_Error__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Error */ "./src/components/Error.js");
-/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/layout */ "./src/components/layout.js");
 
 
 
@@ -45774,14 +45736,14 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+// import { Layout } from './components/layout';
 
 /* Import and destructure main from src/component/index.js 
 and anything else you may need here */
 
 var container = document.getElementById('root');
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
-var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.createBrowserRouter)([{
+var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.createBrowserRouter)([{
   path: '/',
   element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Main, null),
   errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null)
@@ -45795,7 +45757,7 @@ var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.createBrowserRout
   }
 }, {
   path: '/students',
-  element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_views_studentView__WEBPACK_IMPORTED_MODULE_5__.StudentView, null),
+  element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Object(function webpackMissingModule() { var e = new Error("Cannot find module './views/studentView'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), null),
   errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null),
   loader: function loader() {
     console.log('loading students');
@@ -45804,7 +45766,7 @@ var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_11__.createBrowserRout
 }]);
 root.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_redux__WEBPACK_IMPORTED_MODULE_4__.Provider, {
   store: _store_index__WEBPACK_IMPORTED_MODULE_3__["default"]
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_12__.RouterProvider, {
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.RouterProvider, {
   router: router
 })));
 })();
