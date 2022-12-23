@@ -5773,7 +5773,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_1__.configureStore)({
-  reducers: {
+  reducer: {
     data: _stateSlice__WEBPACK_IMPORTED_MODULE_0__["default"]
   }
 });
@@ -5871,6 +5871,43 @@ var CampusView = function CampusView() {
   }, [campuses]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_4__.Layout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Campuses"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_list__WEBPACK_IMPORTED_MODULE_1__.ListView, {
     type: "campuses"
+  }));
+};
+
+/***/ }),
+
+/***/ "./src/views/StudentView.js":
+/*!**********************************!*\
+  !*** ./src/views/StudentView.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StudentView": () => (/* binding */ StudentView)
+/* harmony export */ });
+/* harmony import */ var _components_list__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/list */ "./src/components/list.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _store_stateSlice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/stateSlice */ "./src/store/stateSlice.js");
+/* harmony import */ var _components_layout__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/layout */ "./src/components/layout.js");
+
+
+
+
+
+
+var StudentView = function StudentView() {
+  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useDispatch)();
+  var students = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_5__.useLoaderData)();
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    console.log("StudentView useEffect", students);
+    dispatch((0,_store_stateSlice__WEBPACK_IMPORTED_MODULE_3__.setStudentsAsync)(students));
+  }, [students]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_layout__WEBPACK_IMPORTED_MODULE_4__.Layout, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement("h1", null, "Students"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_components_list__WEBPACK_IMPORTED_MODULE_0__.ListView, {
+    type: "students"
   }));
 };
 
@@ -45720,7 +45757,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module './views/studentView'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _views_StudentView__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/StudentView */ "./src/views/StudentView.js");
 /* harmony import */ var _views_CampusView__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/CampusView */ "./src/views/CampusView.js");
 /* harmony import */ var _server_mocks_students_json__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../server/mocks/students.json */ "./server/mocks/students.json");
 /* harmony import */ var _server_mocks_campuses_json__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../server/mocks/campuses.json */ "./server/mocks/campuses.json");
@@ -45741,26 +45778,34 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 /* Import and destructure main from src/component/index.js 
 and anything else you may need here */
 
-var container = document.getElementById('root');
+var container = document.getElementById("root");
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot)(container);
 var router = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_10__.createBrowserRouter)([{
-  path: '/',
+  path: "/",
   element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components__WEBPACK_IMPORTED_MODULE_2__.Main, null),
   errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null)
 }, {
-  path: '/campuses',
+  path: "/campuses",
   element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_views_CampusView__WEBPACK_IMPORTED_MODULE_6__.CampusView, null),
   errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null),
   loader: function loader() {
-    console.log('loading campuses');
+    // console.log("loading campuses");
     return _server_mocks_campuses_json__WEBPACK_IMPORTED_MODULE_8__;
   }
 }, {
-  path: '/students',
-  element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Object(function webpackMissingModule() { var e = new Error("Cannot find module './views/studentView'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), null),
+  path: "/students",
+  element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_views_StudentView__WEBPACK_IMPORTED_MODULE_5__.StudentView, null),
   errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null),
   loader: function loader() {
-    console.log('loading students');
+    // console.log("loading students");
+    return _server_mocks_students_json__WEBPACK_IMPORTED_MODULE_7__;
+  }
+}, {
+  path: "/students/:studentId",
+  element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_views_StudentView__WEBPACK_IMPORTED_MODULE_5__.StudentView, null),
+  errorElement: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Error__WEBPACK_IMPORTED_MODULE_9__.ErrorView, null),
+  loader: function loader() {
+    // console.log("loading students");
     return _server_mocks_students_json__WEBPACK_IMPORTED_MODULE_7__;
   }
 }]);

@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
-import { useRouteError } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useRouteError } from "react-router-dom";
 
-export const ErrorView = ({ message = 'Uhh, bruh, an error has occured' }) => {
+export const ErrorView = (message = "Uhh, bruh, an error has occured") => {
   const error = useRouteError();
   useEffect(() => {
     console.log(error);

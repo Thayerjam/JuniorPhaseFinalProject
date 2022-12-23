@@ -1,18 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const navData = [
   {
-    title: 'Students',
-    slug: '/students'
+    title: "Students",
+    slug: "/students",
   },
   {
-    title: 'Campuses',
-    slug: '/campuses'
-  }
+    title: "Campuses",
+    slug: "/campuses",
+  },
 ];
 
-export const Layout = ({ children }) => {
+export const Layout = (children) => {
   const navItems = React.useMemo(
     () =>
       navData.map((item) => (

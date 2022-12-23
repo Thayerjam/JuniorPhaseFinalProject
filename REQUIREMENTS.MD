@@ -8,9 +8,9 @@
 
   <details>
 
-- [X] Write a component to display a list of all campuses (at least their names and images)
+- [] Write a component to display a list of all campuses (at least their names and images)
 - [ ] Write a campuses sub-reducer to manage campuses in your Redux store
-- [X] Display the all-campuses component when the url matches `/campuses`
+- [] Display the all-campuses component when the url matches `/campuses`
 
   </details>
 
@@ -18,9 +18,9 @@
 
   <details>
 
-- [X] Write a component to display a list of all students (at least their names)
+- [] Write a component to display a list of all students (at least their names)
 - [ ] Write a students sub-reducer to manage students in your Redux store
-- [X] Display the all-students component when the url matches `/students`
+- [] Display the all-students component when the url matches `/students`
 
   </details>
 
@@ -28,7 +28,7 @@
 
   <details>
 
-- [X] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
+- [] Add a links to the navbar that can be used to navigate to the all-campuses view and the all-students view
 
   </details>
 

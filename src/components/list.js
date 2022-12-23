@@ -1,8 +1,8 @@
-import React from 'react';
-import { StudentShort } from './studentShort';
-import { CampusShort } from './campusShort';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import { StudentShort } from "./studentShort";
+import { CampusShort } from "./campusShort";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const studentRenderer = (student) => {
   return (
@@ -20,7 +20,7 @@ const campusRenderer = (campus) => {
   );
 };
 
-export const ListView = ({ type }) => {
+export const ListView = (type) => {
   const data = useSelector((state) => {
     return state.data[type];
   });
@@ -28,7 +28,7 @@ export const ListView = ({ type }) => {
     console.log(data);
   }, [data]);
 
-  const itemRenderer = type === 'students' ? studentRenderer : campusRenderer;
+  const itemRenderer = type === "students" ? studentRenderer : campusRenderer;
   if (!data?.length) {
     return <span>No Data Found</span>;
   }
