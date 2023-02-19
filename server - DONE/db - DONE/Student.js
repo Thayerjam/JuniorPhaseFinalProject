@@ -1,19 +1,19 @@
-import db from "./db";
 import { Sequelize } from "sequelize";
+import db from "./db";
 
 const Student = db.define("student", {
   firstName: {
-    type: Sequelize.STRING(150),
+    type: Sequelize.STRING(50),
     allowNull: false,
   },
 
   lastName: {
-    type: Sequelize.STRING(100),
+    type: Sequelize.STRING(50),
     allowNull: false,
   },
 
   email: {
-    type: Sequelize.STRING(50),
+    type: Sequelize.STRING(100),
     allowNull: false,
     validate: {
       isEmail: true,
@@ -26,7 +26,7 @@ const Student = db.define("student", {
   },
 
   gpa: {
-    type: Sequelize.STRING(10),
+    type: Sequelize.STRING(5),
     validate: {
       min: 0.1,
       max: 4.0,

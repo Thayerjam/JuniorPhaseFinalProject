@@ -1,9 +1,9 @@
-import { ListView } from "../../src/components/list";
+import { ListView } from "../PreviousStuff/components/list";
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useLoaderData } from "react-router-dom";
-import { setStudentsAsync } from "../store/stateSlice";
-import { Layout } from "../../src/components/layout";
+import { setStudentsAsync } from "../PreviousStuff/store/stateSlice";
+import { Layout } from "../PreviousStuff/components/layout";
 
 export const StudentView = () => {
   const dispatch = useDispatch();

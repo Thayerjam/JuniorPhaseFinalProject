@@ -1,1 +1,9 @@
-export { default as Main } from './Main.js';
+export {default as Main} from './Main.js';
+export {default as Campuses} from './Campuses.js';
+export {default as SingleCampus} from './SingleCampus.js';
+export {default as Students} from './Students.js';
+export {default as SingleStudent} from './SingleStudent.js';
+export {default as Navbar} from './Navbar.js';
+export {default as EditStudent} from './EditStudent.js';
+export {default as EditCampus} from './EditCampus.js';
+export {default as Error} from './Error.js';
