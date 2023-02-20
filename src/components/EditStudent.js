@@ -9,7 +9,7 @@ export const EditStudent = ({ studentId }) => {
   const [email, setEmail] = useState("");
 
   const [gpa, setGpa] = useState("");
-  const [option, setOption] = useState("");
+  const [campus, setCampus] = useState("");
 
   const campuses = useSelector(selectCampuses);
   const dispatch = useDispatch();
@@ -18,7 +18,7 @@ export const EditStudent = ({ studentId }) => {
     try {
       event.preventDefault();
 
-      await dispatch(editStudentAsync({ firstName, lastName, email, gpa, studentId, option }));
+      await dispatch(editStudentAsync({ firstName, lastName, email, gpa, campus, studentId }));
     } catch (err) {
       console.log("Error in EditStudent.js handleUpdate");
       console.error(err);
@@ -49,10 +49,10 @@ export const EditStudent = ({ studentId }) => {
         <label htmlFor="studentEmail">Student Email:</label>
         <input placeholder="student email" name="email" value={email} onChange={(e) => setEmail(e.target.value)} />
 
-        <label htmlFor="studentGpa">student Gpa:</label>
+        <label htmlFor="studentGpa">Student Gpa:</label>
         <input placeholder="student gpa" name="gpa" value={gpa} onChange={(e) => setGpa(e.target.value)} />
 
-        <select onChange={(e) => setOption(e.target.value)}>
+        <select onChange={(e) => setCampus(e.target.value)}>
           <option value="">Choose School</option>
           {campuses.map((campus) => {
             return (

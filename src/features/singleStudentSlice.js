@@ -13,7 +13,7 @@ export const fetchSingleStudent = createAsyncThunk("singleStudent", async (stude
 });
 
 export const editStudentAsync = createAsyncThunk("editStudent", async (student) => {
-  const { firstName, lastName, email, imageUrl, gpa, studentId } = student;
+  const { firstName, lastName, email, imageUrl, gpa, campus, studentId } = student;
 
   const editStudent = {
     firstName,
@@ -21,6 +21,7 @@ export const editStudentAsync = createAsyncThunk("editStudent", async (student) 
     email,
     imageUrl,
     gpa,
+    campus,
   };
 
   try {

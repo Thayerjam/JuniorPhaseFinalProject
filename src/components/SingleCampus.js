@@ -31,10 +31,9 @@ export const SingleCampus = () => {
     <div>
       <h3>Campus</h3>
       <p>Name: {name}</p>
-      <img src={imageUrl} />
       <p>Address: {address}</p>
       <p>Description: {description}</p>
-      <EditCampus campusId={campusId} />
+      <img src={imageUrl} />
       {students && students.length ? (
         students.map((student) => (
           <div key={student.id}>
@@ -54,6 +53,7 @@ export const SingleCampus = () => {
       ) : (
         <p>{name} has no enrolled students.</p>
       )}
+      <EditCampus campusId={campusId} />
     </div>
   );
 };

@@ -23,9 +23,8 @@ export const SingleStudent = () => {
         Full Name: {firstName} {lastName}
       </p>
       <p>Email: {email}</p>
-      <img src={imageUrl} />
       <p>GPA: {gpa}</p>
-      <EditStudent studentId={studentId} />
+      <img src={imageUrl} />
       {campus ? (
         <div>
           <Link to={`/campuses/${campus.id}`}>
@@ -34,9 +33,10 @@ export const SingleStudent = () => {
         </div>
       ) : (
         <p>
-          {firstName} {lastName} is not currently available.
+          {firstName} {lastName} is not currently enrolled.
         </p>
       )}
+      <EditStudent studentId={studentId} />
     </div>
   );
 };

@@ -10,7 +10,7 @@ export const StudentForm = () => {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [gpa, setGpa] = useState(0);
-  const [option, setOption] = useState("");
+  const [campus, setCampus] = useState("");
 
   const campuses = useSelector(selectCampuses);
   const dispatch = useDispatch();
@@ -31,8 +31,8 @@ export const StudentForm = () => {
     setGpa(value);
   };
 
-  const handleOption = (value) => {
-    setOption(value);
+  const handleCampus = (value) => {
+    setCampus(value);
   };
 
   const handleSubmit = async () => {
@@ -41,7 +41,7 @@ export const StudentForm = () => {
       lastName,
       email,
       gpa,
-      option,
+      campus,
     };
 
     let newStudent = await axios.post(`/api/students`, formData);
@@ -51,12 +51,18 @@ export const StudentForm = () => {
 
   return (
     <div>
-      <input placeholder="Enter First Name" onChange={(e) => handleFirstName(e.target.value)} />
-      <input placeholder="Enter Last Name" onChange={(e) => handleLastName(e.target.value)} />
-      <input placeholder="Enter Email Address" onChange={(e) => handleEmail(e.target.value)} />
-      <input placeholder="Enter GPA" onChange={(e) => handleGpa(e.target.value)} />
+      <input
+        placeholder="Enter First Name"
+        onChange={(e) => (e.target.value ? handleFirstName(e.target.value) : null)}
+      />
+      <input placeholder="Enter Last Name" onChange={(e) => (e.target.value ? handleLastName(e.target.value) : null)} />
+      <input
+        placeholder="Enter Email Address"
+        onChange={(e) => (e.target.value ? handleEmail(e.target.value) : null)}
+      />
+      <input placeholder="Enter GPA" onChange={(e) => (e.target.value ? handleGpa(e.target.value) : null)} />
 
-      <select onChange={(e) => handleOption(e.target.value)}>
+      <select onChange={(e) => handleCampus(e.target.value)}>
         <option value="">Select School</option>
         {campuses.map((campus) => {
           return (
