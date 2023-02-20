@@ -1,5 +1,5 @@
-import Student from "./Student";
-import Campus from "./Campus";
+import Student from "./student";
+import Campus from "./campus";
 import db from "./db";
 
 Campus.hasMany(Student);

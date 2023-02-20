@@ -1,5 +1,5 @@
-import studentData from "./server/mocks/students.json";
-import campusData from "./server/mocks/campuses.json";
+import studentData from "./mockData/studentMockData.json";
+import campusData from "./mockData/campusMockData.json";
 
 const { db } = require("./server/db");
 
@@ -23,7 +23,7 @@ const seed = async () => {
 
     db.close();
   } catch (err) {
-    console.error("An error has occured in the seeding process");
+    console.log("An error has occured in the seeding process");
     console.error(err);
     db.close();
   }
