@@ -16,11 +16,6 @@ export const SingleStudent = () => {
     dispatch(fetchSingleStudent(studentId));
   }, [dispatch]);
 
-  const handleRegistered = async (studentId) => {
-    await dispatch(registerStudentAsync({ studentId, campusId }));
-    window.location.reload(true);
-  };
-
   return (
     <div id="singleStudent">
       <h2>Student</h2>

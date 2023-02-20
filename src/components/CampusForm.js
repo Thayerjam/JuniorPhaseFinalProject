@@ -25,7 +25,6 @@ export const CampusForm = () => {
     };
     let newCampus = await axios.post(`/api/campuses/`, formData);
 
-    console.log("test", newCampus.data);
     dispatch(updateState({ data: newCampus.data }));
   };
   return (
