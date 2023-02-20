@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectStudents, fetchAllStudents, deleteStudentAsync } from "../features/students/studentSlice";
+import { selectStudents, fetchAllStudents, deleteStudentAsync } from "../features/studentSlice";
 import { StudentForm } from "./StudentForm";
 
 export const Students = () => {
@@ -50,3 +50,5 @@ export const Students = () => {
     </div>
   );
 };
+
+export default Students;

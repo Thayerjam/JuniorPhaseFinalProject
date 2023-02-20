@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { updateState } from "../features/students/studentSlice";
+import { updateState } from "../features/studentSlice";
 
-import { fetchAllCampuses, selectCampuses } from "../features/campuses/campusSlice";
+import { selectCampuses } from "../features/campusSlice";
 
-export const studentForm = () => {
+export const StudentForm = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [gpa, setGpa] = useState(0);
   const [option, setOption] = useState("");
 
-  const campuses = useSelector(selectCamnpuses);
+  const campuses = useSelector(selectCampuses);
   const dispatch = useDispatch();
 
   const handleFirstName = (value) => {
@@ -47,7 +47,6 @@ export const studentForm = () => {
     let newStudent = await axios.post(`/api/students`, formData);
 
     dispatch(updateState({ data: newStudent.data }));
-    return formData;
   };
 
   return (
@@ -72,3 +71,5 @@ export const studentForm = () => {
     </div>
   );
 };
+
+export default StudentForm;

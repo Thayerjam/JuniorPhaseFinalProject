@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { editCampusAsync } from "../features/singleCampus/singleCampusSlice";
+import { editCampusAsync } from "../features/singleCampusSlice";
 
 export const EditCampus = ({ campusId }) => {
   const [name, setName] = useState("");
@@ -41,3 +41,5 @@ export const EditCampus = ({ campusId }) => {
     </div>
   );
 };
+
+export default EditCampus;

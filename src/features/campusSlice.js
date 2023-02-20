@@ -1,5 +1,5 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
+const { createAsyncThunk, createSlice } = require("@reduxjs/toolkit");
+const axios = require("axios");
 
 export const fetchAllCampuses = createAsyncThunk("campuses", async () => {
   try {
@@ -14,7 +14,7 @@ export const fetchAllCampuses = createAsyncThunk("campuses", async () => {
 
 export const deleteCampusAsync = createAsyncThunk("campuses/deleteCampus", async (campusId) => {
   try {
-    const { data } = await axios.delete(`api/campuses/$campusId`);
+    const data = await axios.delete(`api/campuses/${campusId}`);
     return data;
   } catch (err) {
     console.log("Error in campusSlice.js deleteCampusAsync");

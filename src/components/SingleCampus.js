@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { fetchSingleCampus, selectSingleCampus } from "../features/singleCampus/singleCampusSlice";
+import { fetchSingleCampus, selectSingleCampus } from "../features/singleCampusSlice";
 import { useDispatch, useSelector } from "react-redux";
 import EditCampus from "./EditCampus";
-import { unregisterStudentAsync, registerStudentAsync } from "../features/singleStudent/singleStudentSlice";
+import { unregisterStudentAsync, registerStudentAsync } from "../features/singleStudentSlice";
 
 export const SingleCampus = () => {
   const dispatch = useDispatch();
@@ -57,3 +57,5 @@ export const SingleCampus = () => {
     </div>
   );
 };
+
+export default SingleCampus;

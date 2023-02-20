@@ -1,9 +1,9 @@
-import Student from "./student";
-import Campus from "./campus";
-import db from "./db";
+const Student = require("./student");
+const Campus = require("./campus");
+const db = require("./db");
 
 Campus.hasMany(Student);
-Student.belondsTo(Campus);
+Student.belongsTo(Campus);
 
 module.exports = {
   db,

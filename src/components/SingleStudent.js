@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { fetchSingleStudent, selectSingleStudent } from "../features/singleStudent/singleStudentSlice";
+import { fetchSingleStudent, selectSingleStudent } from "../features/singleStudentSlice";
 import { useDispatch, useSelector } from "react-redux";
 import EditStudent from "./EditStudent";
 
@@ -10,7 +10,7 @@ export const SingleStudent = () => {
 
   const singleStudent = useSelector(selectSingleStudent);
 
-  const { firstName, lastName, email, imageUrl, gpa, campus } = singleStudent;
+  const { studentFirstName, studentLastName, email, imageUrl, gpa, campus } = singleStudent;
 
   useEffect(() => {
     dispatch(fetchSingleStudent(studentId));
@@ -45,3 +45,5 @@ export const SingleStudent = () => {
     </div>
   );
 };
+
+export default SingleStudent;

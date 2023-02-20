@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import { fetchAllStudents, selectStudents } from "../features/students/studentSlice";
-import { fetchAllCampuses, selectCampuses } from "../features/campuses/campusSlice";
+import { fetchAllStudents, selectStudents } from "../features/studentSlice";
+import { fetchAllCampuses, selectCampuses } from "../features/campusSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { Route, Routes, Link } from "react-router-dom";
 
@@ -23,10 +23,10 @@ export const Main = () => {
       </div>
       <nav>
         <Link to="/students" id="studentsNavLink" className="navLink">
-          Students({students.length})
+          Students ({students.length})
         </Link>
         <Link to="/campuses" id="campusesNavLink" className="navLink">
-          Campuses({campuses.length})
+          Campuses ({campuses.length})
         </Link>
       </nav>
 
@@ -39,8 +39,10 @@ export const Main = () => {
         <Route path="/students/:studentId" element={<SingleStudent />} editStudent={EditStudent} />
         <Route path="/students/:studentId" element={<SingleCampus />} editCampus={EditCampus} />
         <Route path="/editCampus" element={<EditCampus />} />
-        <Route path="*" element={<Error />} />
+        <Route path="/errorPage" element={<Error />} />
       </Routes>
     </div>
   );
 };
+
+export default Main;

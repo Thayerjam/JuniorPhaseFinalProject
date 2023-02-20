@@ -1,5 +1,5 @@
 const router = require("express").Router();
-import { Student, Campus } from "../db";
+const { Student, Campus } = require("../db");
 
 router.get("/", async (req, res, next) => {
   try {

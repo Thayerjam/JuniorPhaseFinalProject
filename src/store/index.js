@@ -1,7 +1,7 @@
-import studentSlice from "../features//students/studentSlice";
-import singleStudentSlice from "../features/singleStudent/singleStudentSlice";
-import singleCampusSlice from "../features/singleCampus/singleCampusSlice";
-import campusSlice from "../features/campuses/campusSlice";
+import studentSlice from "../features/studentSlice";
+import singleStudentSlice from "../features/singleStudentSlice";
+import singleCampusSlice from "../features/singleCampusSlice";
+import campusSlice from "../features/campusSlice";
 import { configureStore } from "@reduxjs/toolkit";
 
 const store = configureStore({

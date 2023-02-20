@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { selectCampuses, fetchAllCampuses, deleteCampusAsync } from "../features/campuses/campusSlice";
+import { selectCampuses, fetchAllCampuses, deleteCampusAsync } from "../features/campusSlice";
 import { CampusForm } from "./CampusForm";
 
 export const Campuses = () => {
@@ -46,3 +46,5 @@ export const Campuses = () => {
     </div>
   );
 };
+
+export default Campuses;

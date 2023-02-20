@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { editStudentAsync } from "../features/singleStudent/singleStudentSlice";
-import { fetchAllCampuses, selectCampuses } from "../features/campuses/campusSlice";
+import { editStudentAsync } from "../features/singleStudentSlice";
+import { selectCampuses } from "../features/campusSlice";
 
 export const EditStudent = ({ studentId }) => {
   const [firstName, setFirstName] = useState("");
@@ -76,3 +76,5 @@ export const EditStudent = ({ studentId }) => {
     </div>
   );
 };
+
+export default EditStudent;

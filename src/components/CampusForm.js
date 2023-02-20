@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { updateState } from "../features/campuses/campusSlice";
+import { updateState } from "../features/campusSlice";
 
 export const CampusForm = () => {
   const [campusName, setCampusName] = useState("");
@@ -14,7 +14,7 @@ export const CampusForm = () => {
   };
 
   const handleCampusAddressChange = (value) => {
-    setCAmpusAddress(value);
+    setCampusAddress(value);
   };
 
   const handleSubmit = async () => {

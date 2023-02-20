@@ -11,3 +11,5 @@ export const Error = () => {
     </div>
   );
 };
+
+export default Error;
