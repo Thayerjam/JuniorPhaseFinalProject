@@ -31,7 +31,7 @@ export const Campuses = () => {
       {campuses && campuses.length
         ? campuses.map((campus) => (
             <div key={campus.id}>
-              <Link to={`/campuses${campus.id}`} key={`All Campus: ${campus.id}`}>
+              <Link to={`/campuses/${campus.id}`} key={`All Campuses: ${campus.id}`}>
                 <div className="campus row">
                   <h3>{campus.name}</h3>
                   <img src={campus.imageUrl} height={300} width={300} />

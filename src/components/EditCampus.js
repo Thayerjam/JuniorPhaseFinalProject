@@ -22,7 +22,7 @@ export const EditCampus = ({ campusId }) => {
 
   return (
     <div>
-      <h3>Edit Student</h3>
+      <h3>Edit Campus</h3>
       <form id="campusUpdateForm" onSubmit={handleUpdate}>
         <label htmlFor="name">Campus Name:</label>
         <input placeholder="campus name" name="name" value={name} onChange={(e) => setName(e.target.value)} required />

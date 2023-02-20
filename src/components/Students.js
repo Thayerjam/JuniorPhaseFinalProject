@@ -31,7 +31,6 @@ export const Students = () => {
       {students && students.length
         ? students.map((student) => (
             <div key={student.id}>
-              <h3 key={student.id}>Student:</h3>
               <Link to={`/students/${student.id}`} key={`All Students: ${student.id}`}>
                 <div className="student row" key={student.id}>
                   <div>
@@ -42,7 +41,7 @@ export const Students = () => {
                 </div>
               </Link>
               <form typeof="submit" onSubmit={(event) => handleDelete(event, student.id)}>
-                <button>Submit</button>
+                <button>X</button>
               </form>
             </div>
           ))

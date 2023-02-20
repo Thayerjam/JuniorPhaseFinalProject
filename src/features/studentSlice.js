@@ -36,7 +36,7 @@ export const studentSlice = createSlice({
       return action.payload;
     });
     builder.addCase(deleteStudentAsync.fulfilled, (state, action) => {
-      return action.payload;
+      return state.filter((student) => student.id !== action.payload.id);
     });
   },
 });

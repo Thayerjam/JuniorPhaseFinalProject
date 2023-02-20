@@ -4,6 +4,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchSingleStudent = createAsyncThunk("singleStudent", async (studentId) => {
   try {
     const { data } = await axios.get(`/api/students/${studentId}`);
+    return data;
   } catch (err) {
     console.log("Error in singleStudentSlice.js fetchSingleStudent");
     console.error(err);

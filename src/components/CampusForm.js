@@ -21,11 +21,11 @@ export const CampusForm = () => {
     const formData = {
       name: campusName,
       address: campusAddress,
-      description: "some random description",
+      description: "placeholder description",
     };
-    let newCampus = await axios.post(`/api/campus/`, formData);
+    let newCampus = await axios.post(`/api/campuses/`, formData);
 
-    console.log(newCampus.data);
+    console.log("test", newCampus.data);
     dispatch(updateState({ data: newCampus.data }));
   };
   return (

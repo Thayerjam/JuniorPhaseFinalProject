@@ -10,7 +10,7 @@ export const SingleStudent = () => {
 
   const singleStudent = useSelector(selectSingleStudent);
 
-  const { studentFirstName, studentLastName, email, imageUrl, gpa, campus } = singleStudent;
+  const { firstName, lastName, email, imageUrl, gpa, campus } = singleStudent;
 
   useEffect(() => {
     dispatch(fetchSingleStudent(studentId));
@@ -25,7 +25,7 @@ export const SingleStudent = () => {
     <div id="singleStudent">
       <h2>Student</h2>
       <p>
-        Full Name: {studentFirstName} {studentLastName}
+        Full Name: {firstName} {lastName}
       </p>
       <p>Email: {email}</p>
       <img src={imageUrl} />
@@ -39,7 +39,7 @@ export const SingleStudent = () => {
         </div>
       ) : (
         <p>
-          {studentFirstName} {studentLastName} is not currently available.
+          {firstName} {lastName} is not currently available.
         </p>
       )}
     </div>
